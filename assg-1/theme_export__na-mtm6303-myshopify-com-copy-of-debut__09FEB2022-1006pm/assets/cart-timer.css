@@ -1,0 +1,11 @@
+.text {
+  text-align: center;
+}
+
+.clockflex {
+  color: white;
+  border: 10px solid #3f4d29;
+  background-color: #3f4d29;
+  width: 200px;
+  margin: auto;
+}
