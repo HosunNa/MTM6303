@@ -1,0 +1,103 @@
+<div class="bootstrap">
+  {% comment %}
+    adding three bootstrap cards
+  {% endcomment %}
+   <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ section.settings.card_image | image_url: width: 500 }}" alt="{{section.settings.card_image.alt}}">
+  <div class="card-body">
+    <h5 class="card-title">{{ section.settings.bootstrap_text_title}}</h5>
+    <p class="card-text">{{ section.settings.bootstrap_text_body}}</p>
+    <a href="{{ section.settings.button_link}}" class="btn btn-primary">{{ section.settings.bootstrap_button_text}}</a>
+  </div>
+</div>
+  
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ section.settings.card_image | image_url: width: 500 }}" alt="{{section.settings.card_image.alt}}">
+  <div class="card-body">
+    <h5 class="card-title">{{ section.settings.bootstrap_text_title}}</h5>
+    <p class="card-text">{{ section.settings.bootstrap_text_body}}</p>
+    <a href="{{ section.settings.button_link}}" class="btn btn-primary">{{ section.settings.bootstrap_button_text}}</a>
+  </div>
+</div>
+  
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ section.settings.card_image | image_url: width: 500 }}" alt="{{section.settings.card_image.alt}}">
+  <div class="card-body">
+    <h5 class="card-title">{{ section.settings.bootstrap_text_title}}</h5>
+    <p class="card-text">{{ section.settings.bootstrap_text_body}}</p>
+    <a href="{{ section.settings.button_link}}" class="btn btn-primary">{{ section.settings.bootstrap_button_text}}</a>
+  </div>
+</div>
+  
+  
+</div>                                                              
+
+
+
+<style>
+  {% comment %}
+    adding css to make the cards horizontally
+  {% endcomment %}
+  .bootstrap {display: flex;
+    justify-content: center;
+  }
+  
+
+  
+  .card .btn { 
+    background-color : {{ section.settings.btn-color}}
+  }
+</style>  
+{% schema %}
+{
+    "name": "Bootstrap Card",
+    "tag": "section",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+        {
+            "type": "color",
+            "id": "btn-color",
+            "label": "Button Color",
+            "default": "#3b4d28"
+        },
+		{
+            "type": "text",
+            "id": "bootstrap_text_title",
+            "label": "Bootstrap Card Title",
+            "default": "Add your title here"
+        },
+		{
+            "id": "bootstrap_text_body",
+            "type": "richtext",
+            "label": "Bootstrap Card Text",
+            "default": "<p>Add your text here</p>"
+        },
+		{
+            "type": "text",
+            "id": "bootstrap_button_text",
+            "label": "Bootstrap Card Button Text",
+            "default": "Add button text here"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+        }
+		
+    ],
+    "presets": [{
+        "name": "Bootstrap Card",
+        "category": "Custom"
+    }]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
